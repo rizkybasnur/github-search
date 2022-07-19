@@ -8,14 +8,27 @@ export default function Dialog({ setDialog, dataId }) {
     getGithub();
   }, []);
 
-  const getGithub = () => {
-    fetch(`https://api.github.com/repositories/${dataId}`, {
-      headers: {
-        Authorization: `token ${token}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setDatas(data));
+  const getGithub = async () => {
+    try {
+      // setLoading(true);
+      let response = await fetch(
+        `https://api.github.com/repositories/${dataId}`
+      );
+      let data = await response.json();
+      setDatas(data);
+    } catch (err) {
+      console.error(err);
+      // Handle errors here
+    } finally {
+      // setLoading(false);
+    }
+    // fetch(`https://api.github.com/repositories/${dataId}`, {
+    //   headers: {
+    //     Authorization: `token ${token}`,
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => setDatas(data));
   };
 
   const date = (v) => {
