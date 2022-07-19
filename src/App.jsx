@@ -7,7 +7,6 @@ import Card from "./components/Card";
 import FormInput from "./components/FormInput";
 import Suggestion from "./components/Suggestion";
 import Loading from "./components/Loading";
-import Select from "./components/Select";
 import Banner from "./components/Banner";
 import Info from "./components/Info";
 
@@ -44,7 +43,6 @@ function App() {
       setSearch(data?.items);
     } catch (err) {
       console.error(err);
-      // Handle errors here
     } finally {
       setLoading(false);
     }
@@ -67,7 +65,6 @@ function App() {
       setDatas(data?.items);
     } catch (err) {
       console.error(err);
-      // Handle errors here
     } finally {
       setLoading(false);
     }
@@ -97,9 +94,7 @@ function App() {
 
       {datas && <Info query={query} setCount={setCount} />}
 
-      <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <div className="flex flex-wrap justify-center">
         {datas &&
           datas.map((data) => {
             return (

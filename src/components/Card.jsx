@@ -3,15 +3,7 @@ import React from "react";
 function Card({ data, setDataId, setDialog }) {
   return (
     <div
-      style={{
-        padding: "16px",
-        border: "1px solid white",
-        borderRadius: "8px",
-        marginLeft: "8px",
-        marginBottom: "8px",
-        cursor: "pointer",
-        minWidth: "300px",
-      }}
+      className="pa-16 border-white radius-8 ml-8 mb-8 cursor-pointer min-w-300"
       onClick={() => {
         setDialog(true);
         setDataId(data.id);

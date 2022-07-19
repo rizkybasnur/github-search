@@ -6,8 +6,7 @@ function Suggestion({ e, setQuery }) {
       {" "}
       <div
         key={e.id}
-        className="hover"
-        style={{ cursor: "pointer" }}
+        className="hover cursor-pointer"
         onClick={() => {
           setQuery(e.name);
         }}

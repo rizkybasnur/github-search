@@ -10,7 +10,6 @@ export default function Dialog({ setDialog, dataId }) {
 
   const getGithub = async () => {
     try {
-      // setLoading(true);
       let response = await fetch(
         `https://api.github.com/repositories/${dataId}`
       );
@@ -18,17 +17,8 @@ export default function Dialog({ setDialog, dataId }) {
       setDatas(data);
     } catch (err) {
       console.error(err);
-      // Handle errors here
     } finally {
-      // setLoading(false);
     }
-    // fetch(`https://api.github.com/repositories/${dataId}`, {
-    //   headers: {
-    //     Authorization: `token ${token}`,
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => setDatas(data));
   };
 
   const date = (v) => {
@@ -38,40 +28,20 @@ export default function Dialog({ setDialog, dataId }) {
     );
   };
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        border: "1px solid white",
-        borderRadius: "8px",
-        zIndex: "999",
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "300px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "16px",
-          alignItems: "center",
-          borderBottom: "1px solid white",
-        }}
-      >
+    <div className="bg-black border-white radius-8 z-999 fixed w-300">
+      <div className="flex justify-between pa-16 border-b-white align-center">
         <div></div>
         <div>Detail</div>
         <div
           onClick={() => {
             setDialog(false);
           }}
-          style={{ cursor: "pointer" }}
+          className="cursor-pointer"
         >
           x
         </div>
       </div>
-      <div style={{ padding: "16px" }}>
+      <div className="pa-16">
         {datas && (
           <div>
             <div>Id: {datas.id}</div>

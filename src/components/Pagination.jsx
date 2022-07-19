@@ -11,7 +11,7 @@ function Pagination({ page, setPage, datas }) {
       >
         Prev.
       </button>
-      <span style={{ margin: "0 16px" }}>{page}</span>
+      <span className="mt-16">{page}</span>
       <button
         onClick={() => {
           setPage((page) => page + 1);

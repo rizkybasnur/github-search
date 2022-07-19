@@ -2,14 +2,14 @@ import React from "react";
 
 function FormInput({ query, setQuery }) {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className="flex justify-center">
       <input
         onChange={(e) => {
           setQuery(e.target.value);
         }}
         value={query}
       />
-      <button type="submit" style={{ marginLeft: "16px" }}>
+      <button type="submit" className="ml-16">
         Search
       </button>
     </div>
