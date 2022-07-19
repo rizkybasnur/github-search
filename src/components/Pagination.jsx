@@ -1,25 +1,26 @@
 import React from "react";
+import Button from "./Button";
 
 function Pagination({ page, setPage, datas }) {
   return (
-    <div style={{ marginTop: "16px" }}>
-      <button
-        onClick={() => {
+    <div className="mt-16">
+      <Button
+        title="Prev."
+        disabled={page === 1}
+        onChildClick={() => {
           setPage((page) => page - 1);
         }}
-        disabled={page === 1}
-      >
-        Prev.
-      </button>
-      <span className="mt-16">{page}</span>
-      <button
-        onClick={() => {
+      />
+
+      <span className="mx-16">{page}</span>
+
+      <Button
+        title="Next"
+        disabled={datas.length < 5}
+        onChildClick={() => {
           setPage((page) => page + 1);
         }}
-        disabled={datas.length < 5}
-      >
-        Next
-      </button>
+      />
     </div>
   );
 }

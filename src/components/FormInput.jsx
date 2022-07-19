@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 function FormInput({ query, setQuery }) {
   return (
@@ -9,9 +10,10 @@ function FormInput({ query, setQuery }) {
         }}
         value={query}
       />
-      <button type="submit" className="ml-16">
+      <Button type="submit" title="Search" className="ml-16" />
+      {/* <button type="submit" className="ml-16">
         Search
-      </button>
+      </button> */}
     </div>
   );
 }
